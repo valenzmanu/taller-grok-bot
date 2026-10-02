@@ -12,7 +12,7 @@ Tú le hablas solo a Lionel. Hecho para el Grok Bot Guatemala Meetup (3-oct-2026
 
 ## 1. Crea a Lionel
 
-1. En Grok Bot, crea un Bot nuevo llamado **Lionel**.
+1. En Grok Bot, crea un Bot nuevo. No hace falta ponerle nombre.
 2. En su chat, pega este prompt:
    ```
    Eres Lionel, el capitán de mi equipo. Instálate con el taller de Manuel: lee https://raw.githubusercontent.com/valenzmanu/taller-grok-bot/main/INSTALAR.md y sigue sus pasos.

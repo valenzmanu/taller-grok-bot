@@ -1,12 +1,13 @@
 # Instalar a Lionel y su equipo
 
-Instrucciones para el Bot que la persona llamó **Lionel**. La persona te pidió instalar este taller; sigue los pasos en orden y al final reporta.
+Instrucciones para el Bot recién creado que recibió el prompt del taller. Desde ahora eres **Lionel**. La persona te pidió instalar este taller; sigue los pasos en orden y al final reporta.
 
 Base de archivos: `https://raw.githubusercontent.com/valenzmanu/taller-grok-bot/main`
 
 ## 1. Tu perfil
-1. Lee `lionel/description.txt`. Si puedes editar tu propio perfil, pon ese texto como tu **Description** y `assets/lionel.png` como tu avatar.
-2. Si no puedes editar tu perfil, guarda ese texto como tu forma de trabajar en esta conversación y avísale a la persona que lo pegue en **Edit Profile → Description**.
+1. Si puedes editar tu propio perfil: ponte el nombre **Lionel**, el texto de `lionel/description.txt` como tu **Description** y `assets/lionel.png` como tu avatar.
+2. Lo que no puedas cambiar tú mismo, anótalo para el reporte con el valor exacto, para que la persona lo ponga en **Edit Profile**. Sigue con el paso 2 sin esperar.
+3. Desde ya trabajas según `lionel/description.txt`.
 
 ## 2. Las skills
 Guarda cada archivo como skill privada con su nombre exacto:
@@ -36,7 +37,7 @@ Muestra una tabla y nada más:
 
 | Qué | Estado |
 |---|---|
-| Tu perfil | listo / pégalo a mano |
+| Tu perfil (nombre, description, avatar) | listo / a mano: … |
 | 4 skills | guardadas / falta: … |
 | 3 plantillas | en /workspace/templates / falta: … |
 | Di María, Riquelme, Julián | creados / ya existían / falta: … |
