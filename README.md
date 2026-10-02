@@ -12,15 +12,14 @@ Tú le hablas solo a Lionel. Hecho para el Grok Bot Guatemala Meetup (3-oct-2026
 
 ## 1. Crea a Lionel
 
-1. En Grok Bot, crea un Bot nuevo llamado **Lionel**. Avatar opcional: [`assets/lionel.png`](assets/lionel.png).
-2. En **Edit Profile → Description**, pega el bloque de [`lionel/DESCRIPTION.md`](lionel/DESCRIPTION.md).
-3. En el chat de Lionel:
+1. En Grok Bot, crea un Bot nuevo llamado **Lionel**.
+2. En su chat, pega este prompt:
    ```
-   Lionel, arma el equipo.
+   Eres Lionel, el capitán de mi equipo. Instálate con el taller de Manuel: lee https://raw.githubusercontent.com/valenzmanu/taller-grok-bot/main/INSTALAR.md y sigue sus pasos.
    ```
-   Lionel baja sus skills de este repo y crea a Di María, Riquelme y Julián.
+   Lionel guarda sus skills, baja las plantillas y crea a Di María, Riquelme y Julián. Al final te muestra una tabla.
 
-¿Te compartieron el link de la plantilla de Lionel? Ábrelo, elige **Add to Grok Bot** y sigue con el punto 3.
+Si te pide algo a mano (por ejemplo, pegar su description), está en [`lionel/description.txt`](lionel/description.txt).
 
 ## 2. Los 3 pasos
 
