@@ -1,3 +1,416 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>La página de Riquelme · Taller Grok Bot</title>
-<style>body{margin:0;background:#0A0A0A;color:#fff;font-family:Arial,Helvetica,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center;padding:24px}h1{font-size:28px;margin:0 0 12px}p{color:#9A9A9A;font-size:16px;line-height:1.5;max-width:520px}a{color:#4FA3E0}</style></head>
-<body><main><h1>La página de Riquelme</h1><p>Se publica antes del taller.</p><p><a href="https://github.com/valenzmanu/taller-grok-bot">github.com/valenzmanu/taller-grok-bot</a></p></main></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>[Nombre del restaurante]</title>
+
+<!-- ╔══════════════════════════════════════════════════════════════════╗
+     ║  EDITA SOLO ESTE BLOQUE · Plantilla "Mantel" (cocina de autor,   ║
+     ║  restaurantes formales, steakhouses, cenas, vinos)               ║
+     ║                                                                  ║
+     ║  Reglas:                                                         ║
+     ║  - Deja "" (vacío) lo que no encuentres. La página mostrará un   ║
+     ║    [texto de ejemplo] entre corchetes.                           ║
+     ║  - Nunca inventes precios, horarios ni reseñas.                  ║
+     ║  - Colores en formato hexadecimal: "#RRGGBB".                    ║
+     ╚══════════════════════════════════════════════════════════════════╝ -->
+<style>
+  :root {
+    --primario:   #4A1F2C;  /* vino profundo mediterráneo */
+    --secundario: #C9A96E;  /* oro cálido de acento */
+  }
+</style>
+<script>
+  const SITIO = {
+    nombre:    "Christel's Bistro",
+    frase:     "Cocina mediterránea gourmet en el corazón de la Zona 10",
+    logo:      "",
+    whatsapp:  "",
+    telefono:  "+502 2331-9344",
+    maps:      "https://www.google.com/maps/search/?api=1&query=Christels+Bistro+14+Calle+3-48+Zona+10+Guatemala",
+    direccion: "Edificio EÓN Plaza, 14 Calle 3-48, primer nivel, Zona 10",
+    redes: {
+      instagram: "https://www.instagram.com/christelsbistrogt/",
+      facebook:  "",
+      tiktok:    ""
+    },
+    menu: [
+    ],
+    horario: [
+    ]
+  };
+</script>
+<!-- ═══════════════════════ FIN DEL BLOQUE EDITABLE ═══════════════════════ -->
+
+<style>
+  /* Plantilla "Mantel" · diseño por Manuel Valenzuela (@ingemanu) */
+  :root {
+    --sobre-primario: #fff;
+    --sobre-secundario: #15110f;
+    --noche: #15110f;
+    --noche-2: #1d1815;
+    --marfil: #F3ECE1;
+    --tenue: #b3a99c;
+    --linea: rgba(243,236,225,.14);
+    --banda: 40px;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --fondo-hero: #2a1a1d;
+    --fondo-hero: color-mix(in srgb, var(--primario) 58%, #0b0908);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; background: var(--noche); }
+  body {
+    font-family: var(--serif);
+    background: var(--noche); color: var(--marfil);
+    line-height: 1.5;
+    padding-top: var(--banda);
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+  .falta { opacity: .7; font-style: italic; }
+
+  /* Banda de aviso: fija y siempre visible */
+  .banda {
+    position: fixed; inset: 0 0 auto 0; z-index: 50;
+    min-height: var(--banda);
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 6px 14px;
+    background: var(--marfil); color: var(--noche);
+    font: 600 12.5px/1.25 var(--sans);
+    text-align: center;
+  }
+  .banda b {
+    flex: none; font-size: 10px; letter-spacing: .08em;
+    background: var(--noche); color: var(--marfil); border-radius: 2px; padding: 2px 7px;
+  }
+
+  /* Encabezado */
+  .hero {
+    position: relative; isolation: isolate;
+    min-height: min(calc(92svh - var(--banda)), 720px);
+    display: grid; place-items: center; text-align: center;
+    padding: 48px 24px 56px;
+    background:
+      radial-gradient(120% 70% at 50% 0%, rgba(255,255,255,.10), transparent 60%),
+      var(--fondo-hero);
+    color: var(--marfil);
+  }
+  .hero::after { /* marco fino */
+    content: ""; position: absolute; inset: 14px; z-index: -1; pointer-events: none;
+    border: 1px solid color-mix(in srgb, var(--secundario) 45%, transparent);
+  }
+  .hero-in { max-width: 640px; }
+  .logo {
+    width: 92px; height: 92px; margin: 0 auto 26px;
+    border-radius: 50%; background: var(--marfil);
+    display: grid; place-items: center; overflow: hidden;
+    box-shadow: 0 0 0 1px var(--secundario), 0 0 0 7px var(--fondo-hero), 0 0 0 8px color-mix(in srgb, var(--secundario) 55%, transparent);
+  }
+  .logo img { width: 100%; height: 100%; object-fit: contain; padding: 10px; }
+  .logo span { font: italic 13px var(--serif); color: #7d7368; }
+  .kicker {
+    font: 600 11px/1 var(--sans); letter-spacing: .32em; text-transform: uppercase;
+    color: var(--secundario);
+  }
+  h1 {
+    margin: 18px 0 0;
+    font-weight: 400; font-size: clamp(44px, 13vw, 92px); line-height: .95; letter-spacing: -.01em;
+    text-wrap: balance;
+  }
+  .filete { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 22px auto; color: var(--secundario); }
+  .filete::before, .filete::after { content: ""; width: 56px; height: 1px; background: currentColor; opacity: .7; }
+  .filete i { width: 7px; height: 7px; transform: rotate(45deg); border: 1px solid currentColor; }
+  .frase { font-style: italic; font-size: 20px; color: color-mix(in srgb, var(--marfil) 85%, transparent); max-width: 30ch; margin: 0 auto; text-wrap: pretty; }
+  .acciones { display: grid; gap: 10px; margin: 32px auto 0; max-width: 320px; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 52px; padding: 0 24px; border-radius: 2px;
+    font: 600 13px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase;
+    text-decoration: none; border: 0; cursor: pointer;
+    transition: background-color .2s ease, color .2s ease;
+  }
+  .btn svg { width: 18px; height: 18px; flex: none; }
+  .btn-acento { background: var(--secundario); color: var(--sobre-secundario); }
+  .btn-borde { background: transparent; color: var(--marfil); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--marfil) 50%, transparent); }
+  .btn-borde:hover { box-shadow: inset 0 0 0 1px var(--marfil); }
+  .btn[aria-disabled="true"] { pointer-events: none; opacity: .75; font-style: italic; text-transform: none; letter-spacing: .02em; font-size: 15px; }
+
+  /* Secciones */
+  main { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+  section { padding: 64px 0 0; }
+  .titulo { text-align: center; margin-bottom: 30px; }
+  h2 { font-weight: 400; font-size: 38px; line-height: 1.05; margin-top: 10px; }
+
+  .foto {
+    background: #2b2622; color: #8f857a;
+    border: 1px solid var(--linea);
+    display: grid; place-content: center; justify-items: center; gap: 10px;
+    font: 600 11px/1 var(--sans); letter-spacing: .3em; text-transform: uppercase;
+  }
+  .foto svg { width: 30px; height: 30px; opacity: .6; }
+  .galeria { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 64px; }
+  .galeria .foto:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+  .galeria .foto { aspect-ratio: 1; }
+
+  .carta { list-style: none; max-width: 640px; margin: 0 auto; }
+  .carta li {
+    display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 4px 12px;
+    padding: 18px 0; border-bottom: 1px solid var(--linea);
+  }
+  .carta li:first-child { border-top: 1px solid var(--linea); }
+  .carta strong { font-weight: 400; font-size: 21px; }
+  .carta .puntos { border-bottom: 1px dotted color-mix(in srgb, var(--marfil) 35%, transparent); transform: translateY(-5px); }
+  .carta .precio { font: 600 15px var(--sans); color: var(--secundario); white-space: nowrap; }
+  .carta p { grid-column: 1 / -1; font-style: italic; color: var(--tenue); font-size: 16px; }
+
+  .info { display: grid; gap: 14px; }
+  .bloque {
+    background: var(--noche-2); border: 1px solid var(--linea);
+    padding: 28px 24px; text-align: center;
+  }
+  .bloque h3 { font: 600 11px/1 var(--sans); letter-spacing: .32em; text-transform: uppercase; color: var(--secundario); margin-bottom: 14px; }
+  .bloque p, .bloque li { font-size: 19px; }
+  .bloque ul { list-style: none; display: grid; gap: 4px; }
+  .bloque .btn { margin-top: 22px; width: 100%; }
+
+  .redes { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; }
+  .red {
+    display: inline-flex; align-items: center; gap: 9px; min-height: 44px;
+    font: 600 12px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .red:hover { border-bottom-color: var(--secundario); }
+  .red svg { width: 19px; height: 19px; color: var(--secundario); }
+
+  footer {
+    max-width: 1080px; margin: 72px auto 0; padding: 28px 22px 12px;
+    border-top: 1px solid var(--linea);
+    color: var(--tenue); text-align: center; font: 13px/1.5 var(--sans);
+  }
+  footer strong { display: block; font: 400 22px var(--serif); color: var(--marfil); margin-bottom: 6px; }
+
+  /* Barra de contacto inferior (celular) */
+  .barra {
+    position: fixed; inset: auto 0 0 0; z-index: 40;
+    padding: 12px 14px calc(12px + env(safe-area-inset-bottom));
+    background: color-mix(in srgb, var(--noche) 86%, transparent);
+    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    border-top: 1px solid var(--linea);
+  }
+  .barra .btn { width: 100%; }
+
+  @media (min-width: 860px) {
+    body { padding-bottom: 0; }
+    .barra { display: none; }
+    .hero { min-height: min(calc(86vh - var(--banda)), 760px); }
+    .hero::after { inset: 24px; }
+    .acciones { grid-template-columns: 1fr 1fr; max-width: 520px; }
+    main { padding: 0 32px; }
+    .galeria { grid-template-columns: 2fr 1fr 1fr; }
+    .galeria .foto:first-child { grid-column: auto; aspect-ratio: auto; grid-row: span 2; }
+    .info { grid-template-columns: 1fr 1fr; gap: 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+</style>
+<meta property="og:title" content="Nombre del restaurante" />
+<meta property="og:description" content="Sitio web de demostración para un restaurante con información de contacto y menú." />
+<meta property="og:url" content="https://fierce-meadow-re4r.here.now/" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://here.now/og/fierce-meadow-re4r.jpg" />
+<meta property="og:image:width" content="1280" />
+<meta property="og:image:height" content="720" />
+<meta name="twitter:image" content="https://here.now/og/fierce-meadow-re4r.jpg" />
+<meta name="twitter:card" content="summary_large_image" /></head>
+<body>
+
+<div class="banda" role="note"><b>DEMO</b><span>Demo no oficial creada en un taller. No está afiliada a este negocio.</span></div>
+
+<header class="hero">
+  <div class="hero-in">
+    <div class="logo" id="logo"><span>[logo]</span></div>
+    <p class="kicker">Restaurante</p>
+    <h1 data-s="nombre">[Nombre del restaurante]</h1>
+    <div class="filete" aria-hidden="true"><i></i></div>
+    <p class="frase" data-s="frase">[Frase corta: qué cocinan y para quién]</p>
+    <div class="acciones">
+      <a class="btn btn-acento" data-contacto></a>
+      <a class="btn btn-borde" href="#carta">Ver la carta</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="galeria" aria-label="Fotos">
+    <div class="foto" aria-label="Espacio para foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-8 8"/></svg>Foto aquí</div>
+    <div class="foto" aria-label="Espacio para foto">Foto aquí</div>
+    <div class="foto" aria-label="Espacio para foto">Foto aquí</div>
+  </div>
+
+  <section id="carta">
+    <div class="titulo">
+      <p class="kicker">La carta</p>
+      <h2>Selección de la casa</h2>
+    </div>
+    <ul class="carta" id="menu-lista"></ul>
+  </section>
+
+  <section id="visitanos">
+    <div class="titulo">
+      <p class="kicker">Visítanos</p>
+      <h2>Te esperamos</h2>
+    </div>
+    <div class="info">
+      <div class="bloque">
+        <h3>Horario</h3>
+        <ul id="horario"></ul>
+      </div>
+      <div class="bloque">
+        <h3>Dirección</h3>
+        <p data-s="direccion">[Dirección o zona]</p>
+        <a class="btn btn-borde" data-maps>Abrir en Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="redes">
+    <div class="titulo"><p class="kicker">Síguenos</p></div>
+    <div class="redes" id="redes-lista"></div>
+  </section>
+</main>
+
+<footer>
+  <strong data-s="nombre">[Nombre del restaurante]</strong>
+  <p>Demo no oficial creada en un taller. No está afiliada a este negocio. Fotos y datos por confirmar con el negocio.</p>
+</footer>
+
+<div class="barra"><a class="btn btn-acento" data-contacto></a></div>
+
+<script>
+(function () {
+  const S = SITIO;
+  const v = (x) => (x == null ? "" : String(x).trim());
+  const PH = {
+    nombre: "[Nombre del restaurante]",
+    frase: "[Frase corta: qué cocinan y para quién]",
+    direccion: "[Dirección o zona]"
+  };
+  const ICO = {
+    wa: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg>',
+    tel: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>',
+    instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>',
+    facebook: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5Z"/></svg>',
+    tiktok: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.1-2.8V9.1a6.3 6.3 0 1 0 5.5 6.3V8.6a7.9 7.9 0 0 0 4.4 1.4V6.6a4.5 4.5 0 0 1-4.4-4.6Z"/></svg>'
+  };
+
+  // Texto con respaldo [entre corchetes]
+  document.querySelectorAll("[data-s]").forEach((el) => {
+    const k = el.dataset.s, x = v(S[k]);
+    el.textContent = x || PH[k];
+    el.classList.toggle("falta", !x);
+  });
+  document.title = v(S.nombre) || PH.nombre;
+
+  // Contraste automático del texto sobre los colores elegidos
+  const css = getComputedStyle(document.documentElement);
+  const tinta = (hex) => {
+    const m = /^#?([0-9a-f]{3}|[0-9a-f]{6})$/i.exec(hex.trim());
+    if (!m) return null;
+    let h = m[1]; if (h.length === 3) h = h.replace(/./g, "$&$&");
+    const lum = [0, 2, 4].map((i) => {
+      const c = parseInt(h.substr(i, 2), 16) / 255;
+      return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+    });
+    const L = 0.2126 * lum[0] + 0.7152 * lum[1] + 0.0722 * lum[2];
+    return L > 0.4 ? "#1f1a17" : "#ffffff";
+  };
+  [["--primario", "--sobre-primario"], ["--secundario", "--sobre-secundario"]].forEach(([c, s]) => {
+    const t = tinta(css.getPropertyValue(c));
+    if (t) document.documentElement.style.setProperty(s, t);
+  });
+
+  // Logo
+  const logo = document.getElementById("logo");
+  if (v(S.logo)) {
+    const img = new Image();
+    img.alt = v(S.nombre) ? "Logo de " + v(S.nombre) : "Logo del restaurante";
+    img.onerror = () => { logo.innerHTML = "<span>[logo]</span>"; };
+    img.src = v(S.logo);
+    logo.replaceChildren(img);
+  }
+
+  // WhatsApp o teléfono
+  let contacto = null;
+  const wa = v(S.whatsapp), tel = v(S.telefono);
+  if (wa) {
+    let n = wa.replace(/\D/g, "");
+    if (n.length === 8) n = "502" + n; // número de Guatemala sin código de país
+    contacto = { href: /^https?:\/\//.test(wa) ? wa : "https://wa.me/" + n, txt: "Escríbenos por WhatsApp", ico: ICO.wa };
+  } else if (tel) {
+    contacto = { href: "tel:" + tel.replace(/[^\d+]/g, ""), txt: "Llámanos", ico: ICO.tel };
+  }
+  document.querySelectorAll("[data-contacto]").forEach((a) => {
+    if (contacto) {
+      a.href = contacto.href; a.innerHTML = contacto.ico + "<span>" + contacto.txt + "</span>";
+      if (contacto.href.startsWith("http")) { a.target = "_blank"; a.rel = "noopener"; }
+    } else {
+      a.setAttribute("aria-disabled", "true"); a.innerHTML = ICO.wa + "<span>[WhatsApp o teléfono]</span>";
+    }
+  });
+
+  // Google Maps
+  let maps = v(S.maps);
+  if (!maps && v(S.direccion)) {
+    maps = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent((v(S.nombre) + " " + v(S.direccion)).trim());
+  }
+  document.querySelectorAll("[data-maps]").forEach((a) => {
+    if (maps) { a.href = maps; a.target = "_blank"; a.rel = "noopener"; }
+    else { a.setAttribute("aria-disabled", "true"); a.textContent = "[Link de Google Maps]"; }
+  });
+
+  // Menú o servicios
+  const lista = document.getElementById("menu-lista");
+  const menu = (Array.isArray(S.menu) ? S.menu : []).filter((p) => p && v(p.nombre));
+  const items = menu.length ? menu : [1, 2, 3].map((i) => ({ nombre: "[Platillo o servicio " + i + "]", detalle: "[Descripción breve]", falta: true }));
+  items.forEach((p) => {
+    const li = document.createElement("li");
+    if (p.falta) li.className = "falta";
+    const n = document.createElement("strong"); n.textContent = v(p.nombre); li.append(n);
+    if (v(p.precio)) { const pt = document.createElement("span"); pt.className = "puntos"; li.append(pt); const pr = document.createElement("span"); pr.className = "precio"; pr.textContent = v(p.precio); li.append(pr); }
+    if (v(p.detalle)) { const d = document.createElement("p"); d.textContent = v(p.detalle); li.append(d); }
+    lista.append(li);
+  });
+
+  // Horario
+  const hor = document.getElementById("horario");
+  const h = (Array.isArray(S.horario) ? S.horario : [S.horario]).map(v).filter(Boolean);
+  (h.length ? h : ["[Horario por confirmar]"]).forEach((t) => {
+    const li = document.createElement("li"); li.textContent = t;
+    if (!h.length) li.className = "falta";
+    hor.append(li);
+  });
+
+  // Redes
+  const redes = document.getElementById("redes-lista");
+  const NOM = { instagram: "Instagram", facebook: "Facebook", tiktok: "TikTok" };
+  const r = Object.entries(S.redes || {}).filter(([, u]) => v(u));
+  r.forEach(([k, u]) => {
+    const a = document.createElement("a");
+    a.className = "red"; a.href = v(u); a.target = "_blank"; a.rel = "noopener";
+    a.innerHTML = (ICO[k] || "") + "<span></span>";
+    a.lastChild.textContent = NOM[k] || k;
+    redes.append(a);
+  });
+  if (!r.length) {
+    const s = document.createElement("span");
+    s.className = "red falta"; s.textContent = "[Redes sociales]";
+    redes.append(s);
+  }
+})();
+</script>
+</body>
+</html>
